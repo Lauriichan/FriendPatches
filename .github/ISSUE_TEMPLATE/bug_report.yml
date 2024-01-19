@@ -14,6 +14,20 @@ body:
     validations:
       required: true
   - type: textarea
+    id: mod-list
+    attributes:
+      label: Mod list
+      description: |
+        Please provide a full list of mods that you were using to while the bug happened.
+
+        If you are using Thunderstore or r2modmanager you can get a full list like this:
+        1. Go into the Settings of your profile.
+        2. Click on the 'Modpacks' tab.
+        3. Click on 'Show dependency strings'.
+        4. Copy the content of the dialog and paste it here.
+    validations:
+      required: true
+  - type: textarea
     id: description
     attributes:
       label: Describe what happend
