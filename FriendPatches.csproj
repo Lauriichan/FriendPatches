@@ -97,7 +97,6 @@
     <Compile Include="Core\FriendPatchesPlugin.cs" />
     <Compile Include="Patches\GameNetworkManager_Patches.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tools\DebugHelper.cs" />
     <Compile Include="Tools\PatchHelper.cs" />
     <Compile Include="Tools\Reflection.cs" />
   </ItemGroup>

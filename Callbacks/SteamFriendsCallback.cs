@@ -23,13 +23,18 @@ namespace FriendPatches.Callbacks
             {
                 return;
             }
+            SteamId friendId = friend.Id;
+            if (!GameNetworkManager.Instance.steamIdsInLobby.Contains(friendId))
+            {
+                return;
+            }
             FriendPatchesPlugin.Log.LogInfo(string.Format("Updating friend ({0}): {1}", friend.Id, friend.Name));
             PlayerControllerB self = StartOfRound.Instance.allPlayerScripts[StartOfRound.Instance.thisClientPlayerId];
-            ulong friendId = friend.Id;
+            ulong friendIdLong = friend.Id;
             for (int i = 0;  i < StartOfRound.Instance.allPlayerScripts.Length; i++)
             {
                 PlayerControllerB controller = StartOfRound.Instance.allPlayerScripts[i];
-                if (controller == null || !controller.isPlayerControlled || controller.playerSteamId != friendId)
+                if (controller == null || !controller.isPlayerControlled || controller.playerSteamId != friendIdLong)
                 {
                     continue;
                 }
@@ -42,7 +47,7 @@ namespace FriendPatches.Callbacks
                 {
                     friendName2 = string.Format("{0}{1}", friendName, numberOfDuplicateNamesInLobby);
                 }
-                self.quickMenuManager.AddUserToPlayerList(friendId, friendName2, i);
+                self.quickMenuManager.AddUserToPlayerList(friendIdLong, friendName2, i);
                 StartOfRound.Instance.mapScreen.radarTargets[i].name = friendName2;
                 break;
             }

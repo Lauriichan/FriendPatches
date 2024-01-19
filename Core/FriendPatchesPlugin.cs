@@ -3,7 +3,6 @@ using BepInEx.Configuration;
 using BepInEx.Logging;
 using FriendPatches.Callbacks;
 using FriendPatches.Patches;
-using FriendPatches.Tools;
 using HarmonyLib;
 
 namespace FriendPatches.Core
@@ -48,10 +47,9 @@ namespace FriendPatches.Core
         public void Awake()
         {
             Log = Logger;
-            Reflection.Type("GameNetworkManager");
             FriendPatchesSettings.SetupConfig(Config);
-            SetupPatches();
             SetupCallbacks();
+            SetupPatches();
         }
 
         private void SetupPatches()

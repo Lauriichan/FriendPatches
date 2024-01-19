@@ -2,7 +2,6 @@
 using FriendPatches.Tools;
 using HarmonyLib;
 using Steamworks;
-using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
@@ -44,7 +43,7 @@ namespace FriendPatches.Patches
             {
                 matcher.SetInstruction(new CodeInstruction(OpCodes.Call, Reflection.Method(typeof(GameNetworkManager_Patches), "HandleFriendJoin")));
             }
-            return matcher.End().InstructionEnumeration();
+            return matcher.InstructionEnumeration();
         }
 
     }
