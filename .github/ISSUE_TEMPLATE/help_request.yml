@@ -17,7 +17,7 @@ body:
     id: mod-version
     attributes:
       label: Mod version
-      description: The version of this mod.
+      description: The version that you are using of this mod.
     validations:
       required: false
   - type: textarea
