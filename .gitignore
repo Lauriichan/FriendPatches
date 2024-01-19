@@ -1,5 +1,4 @@
-/obj/
-/bin/
-/.vs/
-/.vscode/
-/.github/
+/obj/**
+/bin/**
+/.vs/**
+/.vscode/**
