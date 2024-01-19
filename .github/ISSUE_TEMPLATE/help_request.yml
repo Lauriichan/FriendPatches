@@ -18,7 +18,7 @@ body:
     attributes:
       label: Mod list
       description: |
-        If applicable, please provide a full list of mods that you were using to while the bug happened.
+        If applicable, please provide a full list of mods that you were using when the thing happened that you need help with.
 
         If you are using Thunderstore or r2modmanager you can get a full list like this:
         1. Go into the Settings of your profile.
