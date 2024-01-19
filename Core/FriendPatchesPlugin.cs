@@ -11,7 +11,7 @@ namespace FriendPatches.Core
     {
         public const string GUID = "lauriichan.friendpatches";
         public const string PrintName = "FriendPatches";
-        public const string Version = "1.0.0";
+        public const string Version = "1.0.1";
     }
 
     public static class FriendPatchesSettings
