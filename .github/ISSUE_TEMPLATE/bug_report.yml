@@ -1,6 +1,5 @@
 name: Bug Report
 description: Report a bug
-title: "[Bug]: "
 labels: ["Bug"]
 body:
   - type: markdown
@@ -44,7 +43,7 @@ body:
     id: mod-version
     attributes:
       label: Mod version
-      description: The version of the mod that you are using.
+      description: The version that you are using of this mod.
     validations:
       required: true
   - type: textarea
