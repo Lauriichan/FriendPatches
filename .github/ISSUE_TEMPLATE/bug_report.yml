@@ -20,7 +20,7 @@ body:
       description: |
         Please provide a full list of mods that you were using to while the bug happened.
 
-        If you are using Thunderstore or r2modmanager you can get a full list like this:
+        If you are using Thunderstore Mod Manager or r2modmanager you can get a full list like this:
         1. Go into the Settings of your profile.
         2. Click on the 'Modpacks' tab.
         3. Click on 'Show dependency strings'.
