@@ -17,7 +17,7 @@ body:
     id: description
     attributes:
       label: Tell us your question.
-      description: The question you got
+      description: Enter the question that you want to ask.
     validations:
       required: true
   - type: textarea
