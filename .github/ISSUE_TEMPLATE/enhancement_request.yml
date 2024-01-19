@@ -7,45 +7,34 @@ body:
       value: |
         Thanks for taking the time to fill out this enhancement report!
   - type: dropdown
-    id: is-improvement
+    id: enhancement-type
     attributes:
-      label: Is this request a new feature?
+      label: Enhancement type
+      description: What kind of enhancement is this request about?
       options:
-        - "Yes"
-        - "No"
+        - "Feature"
+        - "Improvement"
     validations:
       required: true
+  - type: input
+    id: mod-version
+    attributes:
+      label: Mod version
+      description: The version that you are using of this mod.
+    validations:
+      required: false
   - type: textarea
     id: description
     attributes:
-      label: Describe what happend
-      description: A clear and concise description of what the bug is.
-    validations:
-      required: true
-  - type: textarea
-    id: reproduction
-    attributes:
-      label: Reproduction steps
-      description: Give a description of how to reproduce the bug. Please walk through them step by step.
-      placeholder: |
-        1. Go to '...'
-        2. Click on '....'
-        3. Scroll down to '....'
-        4. See error
-    validations:
-      required: true
-  - type: textarea
-    id: expected
-    attributes:
-      label: Expected behavior
-      description: A clear and concise description of what you expected to happen.
+      label: Describe what you want to request.
+      description: A clear and concise description of what you want to be added to this mod.
     validations:
       required: true
   - type: textarea
     id: media
     attributes:
       label: Media
-      description: If applicable, add screenshots, logs or a video to help explain your problem.
+      description: If applicable, add screenshots or videos that show your enhancement concept.
     validations:
       required: false
   - type: textarea
