@@ -1,0 +1,27 @@
+name: Help request
+description: Request for help or ask a question
+labels: ["Help"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this help request!
+  - type: textarea
+    id: description
+    attributes:
+      label: With what do you need help?
+      description: A clear and concise description of what you need help with or the question you got
+    validations:
+      required: true
+  - type: input
+    id: mod-version
+    attributes:
+      label: Mod version
+      description: The version of this mod.
+    validations:
+      required: false
+  - type: textarea
+    id: additional-information
+    attributes:
+      label: Additional Information
+      description: Any additional information that you would like to share.
