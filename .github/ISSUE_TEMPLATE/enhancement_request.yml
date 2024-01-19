@@ -1,6 +1,6 @@
 name: Enhancement request
 description: Request an improvement or feature
-labels: ["Bug"]
+labels: ["Enhancement"]
 body:
   - type: markdown
     attributes:
