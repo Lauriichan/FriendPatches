@@ -6,6 +6,13 @@ body:
     attributes:
       value: |
         Thanks for taking the time to fill out this bug report!
+  - type: input
+    id: mod-version
+    attributes:
+      label: Mod version
+      description: The version that you are using of this mod.
+    validations:
+      required: true
   - type: textarea
     id: description
     attributes:
@@ -39,13 +46,6 @@ body:
       description: If applicable, add screenshots, logs or a video to help explain your problem.
     validations:
       required: false
-  - type: input
-    id: mod-version
-    attributes:
-      label: Mod version
-      description: The version that you are using of this mod.
-    validations:
-      required: true
   - type: textarea
     id: additional-information
     attributes:
