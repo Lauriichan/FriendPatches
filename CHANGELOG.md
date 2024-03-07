@@ -4,3 +4,5 @@
 ## 1.0.1
 - Fix description
 - Fix Persona updates being made even if player is not in lobby
+## 1.0.2
+- Possibly fix spectating issue

@@ -1,6 +1,6 @@
 {
   "name": "FriendPatches",
-  "version_number": "1.0.1",
+  "version_number": "1.0.2",
   "website_url": "https://github.com/Lauriichan/LC-FriendPatches",
   "description": "Fixes late joining players having 'Unknown' as name and added the ability to see players you played with in the 'Recently played' interface of Steam.",
   "dependencies": [

@@ -87,6 +87,10 @@
       <HintPath>..\Libs\Game\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\Libs\Game\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="UnityEngine.UIModule">
       <HintPath>..\Libs\Game\UnityEngine.UIModule.dll</HintPath>
       <Private>False</Private>

@@ -11,7 +11,7 @@ namespace FriendPatches.Core
     {
         public const string GUID = "lauriichan.friendpatches";
         public const string PrintName = "FriendPatches";
-        public const string Version = "1.0.1";
+        public const string Version = "1.0.2";
     }
 
     public static class FriendPatchesSettings
@@ -21,11 +21,17 @@ namespace FriendPatches.Core
             get;
             private set;
         }
+        public static bool UsernameFix
+        {
+            get;
+            private set;
+        }
 
 
         internal static void SetupConfig(ConfigFile cfg)
         {
-            SetPlayedWithOnSteam = cfg.Bind<bool>("Steam", "Enable PlayedWith Patches", true, "Enables patches that add players that joined your lobby to the 'Played With' list on Steam.").Value;
+            UsernameFix = cfg.Bind<bool>("General", "Enable the username fix patches", true, "Enables patches that listen to Steam callbacks for username changes and updates the player names accordingly.").Value;
+            SetPlayedWithOnSteam = cfg.Bind<bool>("Steam", "Enable PlayedWith patches", true, "Enables patches that add players that joined your lobby to the 'Played With' list on Steam.").Value;
         }
 
     }

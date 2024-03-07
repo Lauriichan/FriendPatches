@@ -7,14 +7,24 @@ namespace FriendPatches.Callbacks
     public static class SteamFriendsCallback
     {
 
+        private static bool applied = false;
+
         public static void Apply()
         {
-            SteamFriends.OnPersonaStateChange += PersonaChanged;
+            if (FriendPatchesSettings.UsernameFix)
+            {
+                applied = true;
+                SteamFriends.OnPersonaStateChange += PersonaChanged;
+            }
         }
 
         public static void Unapply()
         {
-            SteamFriends.OnPersonaStateChange -= PersonaChanged;
+            if (applied)
+            {
+                applied = false;
+                SteamFriends.OnPersonaStateChange -= PersonaChanged;
+            }
         }
 
         private static void PersonaChanged(Friend friend)
@@ -40,32 +50,47 @@ namespace FriendPatches.Callbacks
                 }
                 string friendName = friend.Name;
                 controller.playerUsername = friendName;
-                controller.usernameBillboardText.text = friendName;
+                if (controller.usernameBillboardText != null)
+                {
+                    controller.usernameBillboardText.text = friendName;
+                }
                 string friendName2 = friendName;
                 int numberOfDuplicateNamesInLobby = GetNumberOfDuplicateNamesInLobby(self);
                 if (numberOfDuplicateNamesInLobby > 0)
                 {
                     friendName2 = string.Format("{0}{1}", friendName, numberOfDuplicateNamesInLobby);
                 }
-                self.quickMenuManager.AddUserToPlayerList(friendIdLong, friendName2, i);
-                StartOfRound.Instance.mapScreen.radarTargets[i].name = friendName2;
+                if (self.quickMenuManager != null)
+                {
+                    self.quickMenuManager.AddUserToPlayerList(friendIdLong, friendName2, i);
+                }
+                if (StartOfRound.Instance.mapScreen == null)
+                {
+                    TransformAndName transform = StartOfRound.Instance.mapScreen.radarTargets[i];
+                    if (transform != null)
+                    {
+                        transform.name = friendName2;
+                    }
+                }
                 break;
             }
         }
-
         private static int GetNumberOfDuplicateNamesInLobby(PlayerControllerB self)
         {
             int num = 0;
+            PlayerControllerB current;
             for (int i = 0; i < StartOfRound.Instance.allPlayerScripts.Length; i++)
             {
-                if ((StartOfRound.Instance.allPlayerScripts[i].isPlayerControlled || StartOfRound.Instance.allPlayerScripts[i].isPlayerDead) && !(StartOfRound.Instance.allPlayerScripts[i] == self) && StartOfRound.Instance.allPlayerScripts[i].playerUsername == self.playerUsername)
+                current = StartOfRound.Instance.allPlayerScripts[i];
+                if (current != null && (current.isPlayerControlled || current.isPlayerDead) && !(current == self) && current.playerUsername == self.playerUsername)
                 {
                     num++;
                 }
             }
             for (int j = 0; j < StartOfRound.Instance.allPlayerScripts.Length; j++)
             {
-                if ((StartOfRound.Instance.allPlayerScripts[j].isPlayerControlled || StartOfRound.Instance.allPlayerScripts[j].isPlayerDead) && !(StartOfRound.Instance.allPlayerScripts[j] == self) && StartOfRound.Instance.allPlayerScripts[j].playerUsername == string.Format("{0}{1}", StartOfRound.Instance.allPlayerScripts[j].playerUsername, num))
+                current = StartOfRound.Instance.allPlayerScripts[j];
+                if (current != null && (current.isPlayerControlled || current.isPlayerDead) && !(current == self) && current.playerUsername == string.Format("{0}{1}", current.playerUsername, num))
                 {
                     num++;
                 }
