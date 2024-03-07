@@ -2,10 +2,6 @@ name: Bug report
 description: Report a bug
 labels: ["Bug"]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        Thanks for taking the time to fill out this bug report!
   - type: checkboxes
     id: no-mod-relation
     attributes:
@@ -76,4 +72,8 @@ body:
     attributes:
       label: Additional Information
       description: Any additional information that you would like to share.
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
     
