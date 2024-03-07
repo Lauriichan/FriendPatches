@@ -1,6 +1,6 @@
 name: Mod compatibility request
 description: Request support for a specific mod or mod version
-labels: ["Compatibility", "Enhancement"]
+labels: ["Compatibility"]
 body:
   - type: markdown
     attributes:
