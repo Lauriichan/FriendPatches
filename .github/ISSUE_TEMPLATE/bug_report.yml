@@ -6,23 +6,17 @@ body:
     attributes:
       value: |
         Thanks for taking the time to fill out this bug report!
-  - type: checkbox
+  - type: checkboxes
     id: no-mod-relation
     attributes:
-      label: Issue is not related to another mod in particular
+      label: Not a mod compatibility issue
       description: |
         Please confirm that your issue is not related to compatibility issues with another mod.
         However if that is not the case, please open a "Mod compatibility request" instead.
         If you still not choose to do so your issue will be closed afterwards, thanks for your understanding.
-    validations:
-      required: true
-  - type: input
-    id: mod-version
-    attributes:
-      label: Mod version
-      description: The version that you are using of this mod.
-    validations:
-      required: true
+      options:
+        - label: I confirm that the my issue is not related to compatibility issues with another mod
+          required: true
   - type: input
     id: mod-version
     attributes:
