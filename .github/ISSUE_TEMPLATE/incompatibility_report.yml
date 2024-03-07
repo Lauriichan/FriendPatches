@@ -1,6 +1,6 @@
 name: Mod incompatibility report
 description: Report a mod incompatibility
-labels: ["Bug", "Compatibility"]
+labels: ["Compatibility", "Bug"]
 body:
   - type: markdown
     attributes:
