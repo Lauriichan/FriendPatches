@@ -8,7 +8,7 @@ body:
       label: Not a mod compatibility issue
       description: |
         Please confirm that your issue is not related to compatibility issues with another mod.
-        However if that is not the case, please open a "Mod compatibility request" instead.
+        However if that is not the case, please open a "Mod incompatibility report" instead.
         If you still not choose to do so your issue will be closed afterwards, thanks for your understanding.
       options:
         - label: I confirm that the my issue is not related to compatibility issues with another mod
