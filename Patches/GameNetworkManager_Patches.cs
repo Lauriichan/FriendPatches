@@ -5,6 +5,7 @@ using Steamworks;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
+using System.Threading.Tasks;
 
 namespace FriendPatches.Patches
 {
@@ -25,7 +26,18 @@ namespace FriendPatches.Patches
                 return;
             }
             steamIdsInLobby.Add(id);
-            SteamFriends.SetPlayedWith(id);
+            if (StartOfRound.Instance != null && StartOfRound.Instance.localPlayerController.playerSteamId == id)
+            {
+                foreach (SteamId otherId in steamIdsInLobby)
+                {
+                    if (otherId == id)
+                    {
+                        continue;
+                    }
+                    Task.Run(() => SteamFriends.SetPlayedWith(otherId));
+                }
+            }
+            Task.Run(() => SteamFriends.SetPlayedWith(id));
         }
 
         private static IEnumerable<CodeInstruction> PlayerJoined(IEnumerable<CodeInstruction> instructions, ILGenerator generator)
