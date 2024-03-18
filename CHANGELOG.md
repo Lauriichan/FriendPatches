@@ -9,3 +9,5 @@
 ## 1.0.3
 - Another try to fix the spectating issue
 - Fix players not being added to the 'Recently played with' list if they were in the lobby before you
+## 1.0.4
+- Next try to fix compatibility issues with (most likely) MoreCompany

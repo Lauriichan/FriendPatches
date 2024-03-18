@@ -39,10 +39,10 @@ namespace FriendPatches.Callbacks
             {
                 return;
             }
-            Task.Run(() => DoNameUpdate(friendId, friend.Name));
+            Task.Run(() => DoNameUpdate(friendId, friend.Name, friend.IsMe));
         }
 
-        private static void DoNameUpdate(SteamId friendId, string friendName)
+        private static void DoNameUpdate(SteamId friendId, string friendName, bool isMe)
         {
             StartOfRound round = StartOfRound.Instance;
             FriendPatchesPlugin.Log.LogInfo(string.Format("Updating friend ({0}): {1}", friendId, friendName));
@@ -68,7 +68,16 @@ namespace FriendPatches.Callbacks
                 }
                 if (self.quickMenuManager != null)
                 {
-                    self.quickMenuManager.AddUserToPlayerList(friendIdLong, friendName2, i);
+                    PlayerListSlot slot = self.quickMenuManager.playerListSlots[i];
+                    if (slot != null)
+                    {
+                        slot.playerSteamId = friendId;
+                        slot.usernameHeader.text = friendName;
+                        if (GameNetworkManager.Instance.localPlayerController != null)
+                        {
+                            slot.volumeSliderContainer.SetActive(!isMe);
+                        }
+                    }
                 }
                 if (round.mapScreen == null)
                 {
