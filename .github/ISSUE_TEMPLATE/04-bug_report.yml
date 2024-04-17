@@ -7,7 +7,7 @@ body:
     attributes:
       label: Not a mod compatibility issue
       description: |
-        Please confirm that your issue is not related to compatibility issues with another mod.
+        Only check this box if you can confirm that this bug happens with only this mod installed.
         However if that is not the case, please open a "Mod incompatibility report" instead.
         If you still not choose to do so your issue will be closed afterwards, thanks for your understanding.
       options:
