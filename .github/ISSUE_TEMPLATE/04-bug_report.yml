@@ -11,7 +11,7 @@ body:
         However if that is not the case, please open a "Mod incompatibility report" instead.
         If you still not choose to do so your issue will be closed afterwards, thanks for your understanding.
       options:
-        - label: I confirm that the my issue is not related to compatibility issues with another mod
+        - label: I confirm that the my issue is not related to any other mod and happens even without other mods installed.
           required: true
   - type: markdown
     attributes:
